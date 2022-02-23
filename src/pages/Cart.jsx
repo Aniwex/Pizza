@@ -5,6 +5,7 @@ import { useSelector } from 'react-redux'
 import {Button, CartItem} from '../components'
 import {clearCart,removeCartItem , plusCartItem, minusCartItem } from '../redux/actions/cart'
 import { Link } from 'react-router-dom'
+import PaypalCheckoutButton from '../components/PaypalChekoutButton';
 function Cart() {
   const dispatch = useDispatch();
   const {totalPrice,totalCount,items} = useSelector(({ cart }) => cart)
@@ -25,6 +26,10 @@ function Cart() {
   const onMinusItem = (id) => {
     dispatch(minusCartItem(id))
   }
+  const product = {
+    description: 'Test',
+    price: 0
+  };
     return (
         <div className="content">
         <div className="container container--cart">
@@ -72,9 +77,9 @@ function Cart() {
               <span>Вернуться назад</span>
             </Link>
                 </a>
-                <Button className="pay-btn">
-                  <span>Оплатить сейчас</span>
-                </Button>
+                <div className="paypal-button-container">
+                  <PaypalCheckoutButton product={product} />
+                  </div>
               </div>
             </div>
           </div> 

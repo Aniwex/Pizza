@@ -28,7 +28,8 @@ function Cart() {
   }
   const product = {
     description: 'Test',
-    price: 0
+    price: totalPrice,
+    
   };
     return (
         <div className="content">
@@ -77,12 +78,14 @@ function Cart() {
               <span>Вернуться назад</span>
             </Link>
                 </a>
-                <div className="paypal-button-container">
-                  <PaypalCheckoutButton product={product} />
-                  </div>
+                <Link to="/pay">
+                  <Button className="pay-btn">
+                    <span>Оплатить сейчас</span>
+                  </Button>
+                </Link>
+                </div>
               </div>
             </div>
-          </div> 
           :<div className="cart cart--empty">
             <h2>Корзина пустая <icon>😕</icon></h2>
             <p>

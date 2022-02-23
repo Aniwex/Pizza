@@ -9,12 +9,10 @@ function Checkout() {
   };
   return (
     <div>
+      
         <div className="paypal-button-container">
         <PaypalCheckoutButton product={product} />
         </div>
-        <Link to="/" className="button button--black">
-              <span>Вернуться назад</span>
-        </Link>
         
     </div>
   );

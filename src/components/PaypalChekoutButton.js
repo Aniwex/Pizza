@@ -21,7 +21,10 @@ const PaypalCheckoutButton = (props) => {
         shape: 'pill',
         label: 'pay',
         layout: 'horizontal',
+        size: 'responsive',
+        
       }}
+      
       onClick={(data, actions) => {
         const hasAlready = false;
         if (hasAlready) {
@@ -37,7 +40,7 @@ const PaypalCheckoutButton = (props) => {
             {
               description: product.description,
               amount: {
-                value: product.price + totalPrice,
+                value: product.price,
               },
             },
           ],
